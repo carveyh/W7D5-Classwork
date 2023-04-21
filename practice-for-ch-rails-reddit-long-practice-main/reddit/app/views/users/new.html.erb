@@ -1,0 +1,36 @@
+
+
+<h1>New User!</h1>
+
+<form action="<%=users_url%>" method="POST">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label for="username">Username</label>
+	<input id="username" type="text" name="user[username]" value="<%= @user.username %>">
+
+	<label for="password">Password</label>
+	<input type="password" name="user[password]" id="password" value="">
+
+<!--
+	<label >Password
+		<input type="password" name="user[password]" value="">
+	</label>
+-->
+
+	<input type="submit" value="Submit">
+</form>
+
+
+<!--
+k: v
+username = "sam"
+
+params.require(:user).permit(:username)
+
+params ={ user: {username: "sam", password: "blah"}, controller: "User", action: "create"}
+
+@user = User.new(params)
+
+@username = sam
+@password = blah
+@controller = User
+-->
